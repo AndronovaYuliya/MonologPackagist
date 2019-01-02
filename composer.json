@@ -1,4 +1,20 @@
 {
+    "name": "andronova-yuliya/monolog-packagist",
+    "description": "TestProject",
+    "type": "library",
+    "authors": [
+        {
+            "name": "AndronovaYuliya",
+            "email": "andron39933993@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CostumLogger\\":"src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable":true,
     "require": {
         "monolog/monolog": "^1.24"
     }
