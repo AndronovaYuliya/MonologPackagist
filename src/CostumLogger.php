@@ -4,7 +4,7 @@ namespace CostumLogger;
 
 ini_set("display_errors",1);
 ini_set("log_errors",1);
-ini_set("error_log", __DIR__ . '/var/log/error_log.txt');
+ini_set("error_log", dirname($_SERVER['DOCUMENT_ROOT'],2). '/var/log/error_log.txt');
 
 use Monolog\Formatter\LineFormatter;
 use Monolog\Logger;
@@ -29,11 +29,13 @@ class CostumLogger
         $logger=strtoupper($logger);
 
         // Create a handler
-        $this->stream = new StreamHandler(__FILE__.'/var/log/error_log.txt', $logger);
+        $this->stream = new StreamHandler(dirname($_SERVER['DOCUMENT_ROOT'],2). '/var/log/error_log.txt', $logger);
         $this->stream->setFormatter($formatter);
 
         // bind it to a logger object
         $this->log = new Logger($name);
         $this->log->pushHandler($this->stream);
+
+        $this->log->info($name.' is nov ready');
     }
 }
