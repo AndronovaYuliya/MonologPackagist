@@ -42,7 +42,7 @@ class CostumLogger extends Logger
 
         $this->log->pushHandler($this->stream);
 
-        $this->log->info($name.' is now ready');
+        //$this->log->info($name.' is now ready');
         //$this->log->warning();
     }
 
